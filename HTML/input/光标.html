@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>光标位置</title>
+  <style>
+    input {
+      display: block;
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 15px;
+      color: #333333;
+      border: 1px solid #555555;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="ipt" value="这是一段话，设置光标">
+</body>
+<script>
+  // 解决兼容，监听click及设置定时器
+  var tab = false;
+  document.addEventListener('keydown', function(e) {
+    if (e.keyCode == 9) {
+      tab = true;
+    }
+  });
+  document.getElementById('ipt').addEventListener('focus', function() {
+    if(tab) {
+      setTimeout(function() {
+        changeCursorPos('ipt');
+      }, 0);
+    } else {
+      this.blur();
+    }
+    tab = false;
+  });
+
+  document.getElementById('ipt').addEventListener('click', function() {
+    tab = true;
+    this.focus();
+  });
+
+  function changeCursorPos(inputId, pos) {
+    var inpObj = document.getElementById(inputId);
+    if (inpObj.setSelectionRange) {
+      var start = 1;
+      var end = 1;
+      inpObj.setSelectionRange(start, end);
+    } else {
+      console.log('不兼容该方法');
+    }
+  }
+
+</script>
+</html>
