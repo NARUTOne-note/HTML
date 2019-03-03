@@ -28,3 +28,7 @@ Enter 或者点击按钮，事件执行顺序为：
 当 keypress 加上 preventDefault 时， click 和 submit 都不会触发。
 
 因此可知， keypress 使用 preventDefault 的效果是取消了 click，进而引发了 submit 也不会触发。而 keydown 则是因为取消了 keypress 导致没有触发 form 提交。
+
+## 参考
+
+- [https://juejin.im/post/5bc6aa8be51d450e9943804d](https://juejin.im/post/5bc6aa8be51d450e9943804d)
