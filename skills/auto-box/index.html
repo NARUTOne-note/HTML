@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css自适应宽高等比容器</title>
+  <style>
+    body {
+      padding: 16px;
+    }
+    .auto-box {
+      width: 100%;
+    }
+    img {
+      width: 100%;
+    }
+    .vw {
+      width: 60vw;
+      margin: 16px auto;
+    }
+    .vh {
+      /* 
+        height = 图片高 / 图片宽 * 总宽vw
+      */
+      height: 37.4vw;
+    }
+    .pbottom {
+      /*
+        没有 height: 0; 配合，你可能会得到意想不到的结果
+        padding-bottom = 图片高 / 图片宽
+      */
+      overflow: hidden;
+      height: 0;
+      padding-bottom: 62.3%;
+    }
+  </style>
+</head>
+<body>
+  <h3>css自适应宽高等比容器</h3>
+  <!-- vw vh -->
+  <div>
+    <h4>vw、vh</h4>
+    <p>使用容器相对视口单位，适应多设备、不同分辨率下展示</p>
+  </div>
+  <div class="vw vh">
+    <div class="auto-box">
+      <img src="../../imgs/sushi_dot.png" alt="html-body-img">
+    </div>
+  </div>
+  <div>
+      <h4>用子元素的 padding 属性实现</h4>
+      <p>子元素的 padding 属性百分比的值是相对于父容器的宽度而言的</p>
+    </div>
+  <div class="vw">
+    <div class="auto-box pbottom">
+      <img src="../../imgs/sushi_dot.png" alt="html-body-img">
+    </div>
+  </div>
+</body>
+</html>
