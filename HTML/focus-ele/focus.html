@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>可获取焦点元素</title>
+  <style>
+    * {
+      margin: 8px;
+    }
+    a:focus, details:focus {
+      color: #e43a36;
+    }
+    .IDE {
+      height: 300px;
+      padding: 8px;
+      border: 1px solid #e3e3e3;
+      border-radius: 8px;
+      color: #fff;
+      background: rgba(0, 0, 0, .8);
+    }
+  </style>
+</head>
+<body>
+  <!-- 表单元素，没有disabled属性 -->
+  <input type="text">
+  <input type="text" disabled placeholder="disabled">
+  <button>按钮</button>
+  <button disabled>disabled按钮</button>
+  <br/>
+
+  <!-- 链接, 必须有href -->
+  <a href="#">href #</a>
+  <a>no href</a>
+
+  <!-- H5内容标签：<details> -->
+  <details>
+    <summary>Copyright 2011.</summary>
+  </details>
+
+  <!-- 带有 contentEditable 属性的任何元素，表示该元素是可编辑的，和表单功能类似，自然也就能够获取焦点了 -->
+  <div contentEditable="true" class="IDE"></div>
+
+  <!-- tabindex: 带有 tabindex 属性的任何元素，表示元素是否能够接受输入焦点，用来设置键盘中的 TAB 键在元素中的移动顺序 -->
+  <div tabindex="0">tabindex</div>
+</body>
+</html>

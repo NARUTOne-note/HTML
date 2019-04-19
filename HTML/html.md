@@ -1,4 +1,4 @@
-## Welcome to HTML
+# Welcome to HTML
 
 [head](https://github.com/joshbuchea/HEAD)
 
@@ -8,6 +8,6 @@
 
 [移动前端不得不了解的HTML5 head 头标签（2016最新版）](http://www.css88.com/archives/6410)
 
-### 小记
+## 小记
 
 - [form submit](http://david-chen-blog.logdown.com/posts/177766-how-forms-submit-when-pressing-enter)
