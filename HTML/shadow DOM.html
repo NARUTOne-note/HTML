@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Shadow DOM</h2>
+  <p>Chrome 中打开开发者工具，在设置中勾选 Show user agent shadow DOM</p>
+  <div class="content">
+    <input type="range" />
+    <video controls="">
+      <source src="https://mdn.mozillademos.org/files/2587/AudioTest%20(1).ogg" type="audio/ogg">
+    </video>
+    <div id="demo">
+
+    </div>
+  </div>
+</body>
+<script>
+  var ele = document.querySelector('#demo')
+  var shadow = ele.attachShadow({
+    mode: 'open' // open/closed , 开发关闭封装模式
+  })
+  shadow.innerHTML = '<p>This is a Shadow DOM</p>';
+  shadow.innerHTML += '<style>p { color: red; }</style>'
+</script>
+</html>
