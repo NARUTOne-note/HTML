@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>img图片</title>
+  <style>
+    img {
+      /* 目前只有 Firefox 和 IOS 上的 Safari 才支持 */
+      image-orientation: from-image; /*自动根据图片的 Orientation 值进行校正*/ 
+    }
+  </style>
+</head>
+<body>
+  <!-- 图片元信息——旋转 -->
+  <img src="https://dayfront.oss-cn-beijing.aliyuncs.com/topic/orientation.jpg" width="600px" />
+  <!-- 服务器处理配置 —— 全栈的思维很重要-->
+  <img src="https://dayfront.oss-cn-beijing.aliyuncs.com/topic/orientation.jpg?x-oss-process=image/auto-orient,1" width="600px" />
+</body>
+</html>
