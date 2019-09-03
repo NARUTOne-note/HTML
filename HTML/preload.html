@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>资源预加载preload</title>
+  <!-- 预加载 -->
+  <link rel="preload" href="main.css" as="style">
+  <link rel="preload" as="image" href="xxx.png" >
+  <link rel="preload" href="init.js" as="script">
+  <!-- 执行加载 -->
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <img src="xxx.png" />
+</body>
+<script src="init.js"></script> 
+</html>
