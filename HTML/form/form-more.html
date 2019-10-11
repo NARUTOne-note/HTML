@@ -12,19 +12,26 @@
       name: <input type="text" id='name' name='username'/>
     </label>
     <label for="password">
-      password: <input type="text" id='password' name='password'/>
+      password: <input type="password" id='password' name='password'/>
+    </label>
+    <label for="disabled">
+      disabled: <input type="text" id='disabled' name='disabled' value="disabled-value" disabled/>
     </label>
     <input id="save" type="submit" value="Save" onclick="handleClick(this)">
   </form>
 </body>
 <script>
   var form = document.getElementById('form');
+  var disIpt = document.getElementById('disabled');
+  console.log(disIpt.value);
   function handleSubmit(el) {
     console.log(200);
     console.log(el);
     
-    const ipt = el.username.value;
-    alert('submit! ' + ipt);
+    const ipt1 = el.username.value;
+    const ipt2 = el.password.value;
+    const ipt3 = el.disabled.value;
+    alert('submit! ' + ipt1 + ',' + ipt2 + ',' + ipt3);
     return false; // 防止页面刷新
   }
   function handleClick(el) {
