@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>table-colgroup</title>
+  <style>
+    table {
+      /*
+        auto: 默认 列宽度由单元格内容设定
+        fixed: 列宽由表格宽度和列宽度设定
+        inherit: 规定应该从父元素继承 table-layout 属性的值
+      */
+      table-layout: fixed;
+      width: 100%;
+    }
+    table td {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .col1:nth-child(2n) {
+      background: rgb(126, 126, 221);
+    }
+    .col1:nth-child(2n+1){
+      background: #E5ECFB;
+    }
+    .group1 {
+      background: rgb(196, 101, 191);
+    }
+  </style>
+</head>
+<body>
+  <!-- http://coderlt.coding.me/2017/11/20/table-colgroup/ -->
+  <!-- 
+    表结构
+    table(summary)
+    caption
+    colgroup(width span)
+        col(width)
+    thead
+        tr > th(colspan rowspan)
+    tbody
+        tr > td(colspan rowspan)
+    tbody
+        tr > td(colspan rowspan)
+    tfoot
+        tr > td(colspan rowspan)
+
+    summary 用于对描述表格
+    caption 用于显示表格标题
+    colgroup & col 用于控制列的样式
+    thead 和 tfoot 在一张表中都只能有一个，而 tbody 可以有多个
+    tfoot 必须出现在 tbody 前面，这样浏览器在接收主体数据之前，就能渲染表尾，有利于加快表格的显示速度。这一点对大型表格尤其重要
+    thead、tbody 和 tfoot 里面都必须使用 tr 标签
+    <colgroup> 定义表格列的组。通过此标签，您可以对列进行组合，以便格式化。该元素只有在 <table> 中才是合法的。
+   -->
+
+   <!-- 
+     colgroup
+        为表格列添加列的样式，并不能创建列
+        对表格中的列进行组合，以便对其进行格式化
+        唯一属性 span: 规定列组应该横跨的列数
+        只能在 <table> 元素之内，在任何一个 <caption> 元素之后，在任何一个 <thead>、<tbody>、<tfoot>、<tr> 元素之前使用
+
+    colgroup 与 col的区别及关系
+      <colgroup> 用于设置表格中 多列 的样式，闭合标签
+      <col> 用于设置表格中 单列 的样式，单标签
+      <colgroup> 元素只能包含 <col> 元素
+      <colgroup> 元素无法创建表格列，只用于控制列的样式
+      给 col 添加样式 width、background、border; 设置 color、font-size、text-align、min-width、max-width等无效
+      均可以使用百分比控制列的宽度
+    -->
+    <table class="table">
+      <col class="col1" width="10%">
+      <col class="col1">
+      <colgroup class="group1" span="2" width="30%"></colgroup>
+      <col class="col1">
+      <colgroup class="group1" span="3"></colgroup>
+      <col class="col1">
+      <colgroup class="group1" span="1"></colgroup>
+      <thead>
+        <tr>
+          <th>pos</th>
+          <th>team</th>
+          <th>A</th>
+          <th>D</th>
+          <th>S</th>
+          <th>DFG</th>
+          <th>H</th>
+          <th>J</th>
+          <th>GF</th>
+          <th>JH</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>sf</td>
+          <td>sf</td>
+          <td>sf</td>
+          <td>sf</td>
+          <td>sf</td>
+          <td>sf</td>
+          <td>sf</td>
+          <td>sf</td>
+          <td>sf</td>
+          <td>sf</td>
+        </tr>
+        <tr>
+          <td>sf</td>
+          <td>sasdasda梵蒂冈的观点发生过的灌砂法水电费第三方f</td>
+          <td>sf</td>
+          <td>sf</td>
+          <td>sf</td>
+          <td>sasdasda梵蒂冈的观点发生过的灌砂法水电费第三方f</td>
+          <td>sf</td>
+          <td>sf</td>
+          <td>sasdasda梵蒂冈的观点发生过的灌砂法水电费第三方f</td>
+          <td>sf</td>
+        </tr>
+      </tbody>
+    </table>
+</body>
+</html>
