@@ -15,10 +15,13 @@
       table-layout: fixed;
       width: 100%;
     }
-    table td {
+    /* table td {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+    } */
+    table td {
+      word-wrap: break-word;
     }
 
     .col1:nth-child(2n) {
@@ -76,7 +79,7 @@
     <table class="table">
       <col class="col1" width="10%">
       <col class="col1">
-      <colgroup class="group1" span="2" width="30%"></colgroup>
+      <colgroup class="group1" span="2" width="20%"></colgroup>
       <col class="col1">
       <colgroup class="group1" span="3"></colgroup>
       <col class="col1">
@@ -110,7 +113,8 @@
         </tr>
         <tr>
           <td>sf</td>
-          <td>sasdasda梵蒂冈的观点发生过的灌砂法水电费第三方f</td>
+          <td>sasdasda梵蒂冈的观点发生过的
+            灌砂法水电费第三方f</td>
           <td>sf</td>
           <td>sf</td>
           <td>sf</td>
