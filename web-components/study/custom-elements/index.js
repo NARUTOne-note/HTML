@@ -8,13 +8,17 @@ class FlagIcon extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     // name will always be "country" due to observedAttributes
-    this._countryCode = newValue;
+    this._countryCode = newValue + 2;
     this._updateRendering();
   }
 
   connectedCallback() {
     // 首次注入
+    console.log('FlagIcon')
     this._updateRendering();
+
+    // ! this 具有 DOM  Element api 所有方法
+    // this.setAttribute()
   }
 
   disconnectedCallback() {
@@ -33,12 +37,8 @@ class FlagIcon extends HTMLElement {
     return this._countryCode;
   }
 
-  set country(v) {
-    this.setAttribute("country", v);
-  }
-
   _updateRendering() {
-    //...
+    console.log('mounted')
   }
 }
 
@@ -50,11 +50,27 @@ class PlasticButton extends HTMLButtonElement {
         // 动效逻辑
     });
   }
+
+  connectedCallback() {
+    console.log('PlasticButton')
+  }
+}
+
+class FlagIconExtend extends FlagIcon {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    console.log('FlagIconExtend', this)
+    super.connectedCallback();
+  }
 }
 
 // 为了区别与非自定义组件，自定义组件名称通常以“-”分隔
 //全局注册该元素，自定义元素
 customElements.define("flag-icon", FlagIcon);
+customElements.define("flag-icon-extend", FlagIconExtend);
 /**
 const flagIcon = document.createElement("flag-icon");
 flagIcon.country = "cn";
