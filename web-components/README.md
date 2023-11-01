@@ -2,6 +2,7 @@
 
 - [web components](https://www.webcomponents.org/introduction)
 - [web components MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_components)
+- [lit components](https://github.com/lit/lit/)
 
 ## 规范
 
