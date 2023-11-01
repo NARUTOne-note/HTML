@@ -2,6 +2,7 @@ class FlagIcon extends HTMLElement {
   constructor() {
     super();
     this._countryCode = null;
+    this.created?.();
   }
 
   static get observedAttributes() { return ["country"]; }
@@ -13,6 +14,7 @@ class FlagIcon extends HTMLElement {
   }
 
   connectedCallback() {
+    this.mounted?.();
     // 首次注入
     console.log('FlagIcon')
     this._updateRendering();
@@ -61,9 +63,12 @@ class FlagIconExtend extends FlagIcon {
     super();
   }
 
-  connectedCallback() {
-    console.log('FlagIconExtend', this)
-    super.connectedCallback();
+  created() {
+    console.log('child created')
+  }
+
+  mounted() {
+    console.log('child mounted')
   }
 }
 
